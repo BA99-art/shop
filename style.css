@@ -1,0 +1,507 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f1;
+    color: #111;
+}
+
+
+/* HEADER */
+
+header {
+    height: 78px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #111;
+    color: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #aaa;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.cart-btn {
+    border: none;
+    background: white;
+    color: #111;
+
+    padding: 12px 20px;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cart-btn span {
+    background: #111;
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 3px 7px;
+    margin-left: 5px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+
+    background: #111;
+    color: white;
+
+    padding: 80px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 800;
+
+    color: #777;
+
+    margin-bottom: 18px;
+}
+
+.hero .eyebrow {
+    color: #aaa;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 120px);
+
+    line-height: .85;
+
+    letter-spacing: -7px;
+}
+
+.hero h1 span {
+    color: #aaa;
+}
+
+.hero-text {
+    max-width: 450px;
+
+    color: #aaa;
+
+    margin: 30px 0;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+.shop-btn {
+    display: inline-block;
+
+    background: white;
+    color: #111;
+
+    padding: 14px 22px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* HERO CARD */
+
+.hero-card {
+    height: 440px;
+
+    background: #ddd;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    transform: rotate(2deg);
+}
+
+.hero-shirt {
+    font-size: 180px;
+
+    font-weight: 900;
+
+    color: #111;
+}
+
+.hero-card p {
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+
+/* PRODUCTS */
+
+.products-section {
+    padding: 100px 7%;
+}
+
+.section-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    align-items: end;
+
+    margin-bottom: 45px;
+}
+
+.section-head h2 {
+    font-size: 50px;
+
+    letter-spacing: -3px;
+}
+
+.section-head > p {
+    max-width: 350px;
+
+    color: #777;
+
+    line-height: 1.5;
+}
+
+
+/* PRODUCT GRID */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.product {
+    background: white;
+
+    padding-bottom: 20px;
+}
+
+.product-img {
+    height: 300px;
+
+    background: #e2e2de;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 90px;
+
+    font-weight: 900;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info h3 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.price {
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.add {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #111;
+
+    background: #111;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+.add:hover {
+    background: #333;
+}
+
+
+/* ABOUT */
+
+.about {
+    background: #ddd;
+
+    padding: 110px 7%;
+
+    text-align: center;
+}
+
+.about .eyebrow {
+    color: #555;
+}
+
+.about h2 {
+    font-size: 50px;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.about > p:last-child {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #555;
+
+    line-height: 1.7;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #111;
+
+    color: #888;
+
+    text-align: center;
+
+    padding: 30px;
+
+    font-size: 13px;
+}
+
+
+/* CART */
+
+#overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #0008;
+
+    z-index: 20;
+}
+
+#overlay.open {
+    display: block;
+}
+
+.cart-panel {
+    position: fixed;
+
+    right: -430px;
+
+    top: 0;
+
+    width: 430px;
+
+    max-width: 95%;
+
+    height: 100vh;
+
+    background: white;
+
+    z-index: 30;
+
+    padding: 25px;
+
+    transition: .3s;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 20px;
+}
+
+.cart-header button {
+    border: none;
+
+    background: none;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+#cartItems {
+    flex: 1;
+
+    overflow: auto;
+
+    padding: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    border-bottom: 1px solid #eee;
+
+    padding: 15px 0;
+}
+
+.remove {
+    border: none;
+
+    background: none;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.cart-footer {
+    border-top: 1px solid #ddd;
+
+    padding-top: 20px;
+}
+
+.whatsapp {
+    width: 100%;
+
+    padding: 15px;
+
+    background: #111;
+
+    color: white;
+
+    border: none;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    font-weight: 800;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 60px;
+    }
+
+    .hero-card {
+        height: 320px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-head {
+        display: block;
+    }
+
+    .section-head > p {
+        margin-top: 15px;
+    }
+
+    .products-section {
+        padding: 70px 5%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .cart-panel {
+        width: 100%;
+    }
+
+}
